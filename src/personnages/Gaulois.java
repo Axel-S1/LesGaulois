@@ -13,7 +13,7 @@ public class Gaulois extends Personnage{
 	
 	@Override
 	public void frapper(Personnage personnage) {
-		int forceDuCoup = (int)((getForce()*boostPotion)/3);
+		int forceDuCoup = (int)(getForce()*boostPotion);
 		System.out.println("Le " + donnerAuteur() + " " + getNom() + " donne un grand coup de force " + forceDuCoup + " au " + personnage.donnerAuteur() + " " + personnage.getNom());
 		personnage.recevoirCoup(forceDuCoup);
 		boostPotion -= 0.5;

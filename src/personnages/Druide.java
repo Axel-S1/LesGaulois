@@ -17,7 +17,7 @@ public class Druide extends Gaulois{
 	}
 	
 	public void fairepotion(int nombreDeDose) {
-		forcePotion = random.nextInt(5)+2;
+		int forcePotion = random.nextInt(5)+2;
 		doseRestante = nombreDeDose;
 		System.out.println("Le gaulois " + getNom() + " : « J'ai concocté " + nombreDeDose + " doses de potion magique. Elle a une force de " + forcePotion + ". »");
 	}
