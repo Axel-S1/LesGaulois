@@ -13,12 +13,16 @@ public abstract class Personnage {
 		return nom;
 	}
 	
+	protected int getForce() {
+		return force;
+	}
+	
 	public void parler(String message) {
 		System.out.println("le "+ donnerAuteur()+ " " + nom + " : " + '"' + message + '"');
 	}
 	
 	public void frapper(Personnage personnage) {
-		System.out.println("Le " + donnerAuteur() + " " + nom + " donne un grand coup au " + personnage.donnerAuteur() + " " + personnage.getNom());
+		System.out.println("Le " + donnerAuteur() + " " + nom + " donne un grand coup de force " + force + " au " + personnage.donnerAuteur() + " " + personnage.getNom());
 		personnage.recevoirCoup(force/3);
 	}
 	
@@ -31,6 +35,10 @@ public abstract class Personnage {
 		else {
 			this.parler("Aïe !");
 		}
+	}
+	
+	public boolean estMort() {
+		return (force <= 0);
 	}
 
 	protected abstract String donnerAuteur();
